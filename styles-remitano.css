@@ -1,0 +1,243 @@
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 1rem;
+        margin-left: 63px;
+        margin-top: 60px;
+        transition: all 0.3s ease;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .header h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .add-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.25rem;
+      }
+
+      details {
+        margin-bottom: 1.5rem;
+      }
+
+      summary {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::after {
+        content: "▼";
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+        transition: transform 0.3s ease;
+      }
+
+      details[open] summary::after {
+        transform: rotate(180deg);
+      }
+
+      .menu-item {
+        display: flex;
+        margin-left: -18px;
+        align-items: center;
+        padding: 8px 16px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .menu-item:hover {
+        background-color: #f5f5f5;
+      }
+
+      .menu-item-content {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+      }
+
+      .menu-item-icon {
+        margin-right: 12px;
+        font-size: 20px;
+      }
+
+      .menu-item-label {
+        font-size: 14px;
+      }
+
+      .menu-item-count {
+        display: flex;
+        align-items: center;
+      }
+
+      .menu-item-count span {
+        margin-left: 4px;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .menu-item-count svg {
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+      }
+
+      /* Topic Styling */
+      .topic {
+        padding: 10px;
+        background-color: #f1f1f1;
+        margin: 10px 0;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .topic:hover {
+        background-color: #e2e2e2;
+      }
+
+      /* Modal Styling */
+      .support-modal {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 500px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+        border: 1px solid #ddd;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      /* Show modal for team only on hover */
+      .menu-item.team-item:hover > .support-modal {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Show modal for topic only on hover */
+      .topic:hover > .support-modal {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Header styling */
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        background: linear-gradient(135deg, #42a5f5, #7e57c2);
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        color: white;
+      }
+
+      .modal-title {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .edit-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      .edit-button:hover {
+        color: #ffca28;
+      }
+
+      .modal-content {
+        padding: 16px;
+      }
+
+      .modal-summary {
+        margin-bottom: 16px;
+      }
+
+      .teammate-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .teammate {
+        display: flex;
+        align-items: center;
+      }
+
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      .teammate-name {
+        font-size: 14px;
+        font-weight: bold;
+        flex-grow: 1;
+      }
+
+      .progress-bar {
+        background-color: #e0e0e0;
+        border-radius: 8px;
+        height: 8px;
+        width: 100px;
+        margin-right: 8px;
+      }
+
+      /* Default progress bar colors */
+      .progress {
+        height: 100%;
+        border-radius: 8px;
+      }
+
+      .progress.low {
+        background-color: #4caf50; /* Green for < 50% */
+      }
+
+      .progress.medium {
+        background-color: #ffca28; /* Yellow for 50% - 80% */
+      }
+
+      .progress.high {
+        background-color: #f44336; /* Red for > 80% */
+      }
+
+      .count {
+        font-size: 12px;
+        color: #666;
+      }
